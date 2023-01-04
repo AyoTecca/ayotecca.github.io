@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Glassmorphism button</title>
+</head>
+
+<body>
+	
+	<div class="container">
+		<div class="block"><a href="#">I</a></div>
+		<div class="block"><a href="#" >L</a></div>
+		<div class="block"><a href="#" >O</a></div>
+		<div class="block"><a href="#">V</a></div>
+		<div class="block"><a href="#" >E</a></div>
+		<div class="block"><a href="#" >U</a></div>
+	</div>		
+	<div id="background"></div>
+	<div id="chest">
+  		<div class="heart left side top"></div>
+  		<div class="heart center">&hearts;</div>
+  		<div class="heart right side"></div>
+	</div>
+</body>
+<style>
+  
+
+  * {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Belissimo script";
+	font-size: 60px;
+  }
+  body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  grid-auto-flow: column;
+  background-color: #1b1b1c;
+}
+
+  body {
+    position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+  }
+  
+  .container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+  }
+  .container .block {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 125px;
+	height: 125px;
+	margin: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  .container .block a {
+	position:absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow:hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+  }
+  .container .block:hover a {
+	letter-spacing: 3px;
+  }
+  .container .block a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+  }
+  .container .block:hover a::before {
+	transform: skewX(45deg) translate(200px);
+  }
+  .container .block::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -5px;
+	width: 30px;
+	height: 20px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+  }
+  .container .block:hover::before /*lightup button*/ {
+	bottom: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+  }
+  .container .block::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: -5px;
+	width: 30px;
+	height: 20px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+  }
+  .container .block:hover::after /*lightup button*/ {
+	top: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+  }
+  .container .block:nth-child(1)::before, /*chnage 1*/
+  .container .block:nth-child(1)::after {
+	background: pink;
+	box-shadow: 0 0 5px pink, 0 0 15px pink, 0 0 30px pink,
+		0 0 60px pink;
+  }
+  .container .block:nth-child(2)::before, /* 2*/
+  .container .block:nth-child(2)::after {
+	background: #ff94a7;
+	box-shadow: 0 0 5px #ff94a7, 0 0 15px #ff94a7, 0 0 30px #ff94a7,
+		0 0 60px #ff94a7;
+  }
+  .container .block:nth-child(3)::before, /* 3*/
+  .container .block:nth-child(3)::after {
+	background: rgb(255, 109, 134);
+	box-shadow: 0 0 5px rgb(255, 109, 134), 0 0 15px rgb(255, 109, 134), 0 0 30px rgb(255, 109, 134),
+		0 0 60px rgb(255, 109, 134);
+  }
+  .container .block:nth-child(4)::before, /* 4*/
+  .container .block:nth-child(4)::after {
+	background: rgba(255, 76, 107, 1.25);
+	box-shadow: 0 0 5px rgba(255, 76, 107, 1.25), 0 0 15px rgba(255, 76, 107, 1.25), 0 0 30px rgba(255, 76, 107, 1.25),
+		0 0 60px rgba(255, 76, 107, 1.25);
+  }
+  .container .block:nth-child(5)::before, /* 5*/
+  .container .block:nth-child(5)::after {
+	background: hsl(350, 100%, 60%);
+	box-shadow: 0 0 5px hsl(350, 100%, 60%), 0 0 15px hsl(350, 100%, 60%), 0 0 30px hsl(350, 100%, 60%),
+		0 0 60px hsl(350, 100%, 60%);
+  }
+  .container .block:nth-child(6)::before, /* 6*/
+  .container .block:nth-child(6)::after {
+	background: #ff002d;
+	box-shadow: 0 0 5px #ff002d, 0 0 15px #ff002d, 0 0 30px #ff002d,
+		0 0 60px #ff002d;
+  }
+  @keyframes beat {
+    0% {transform: scale(1) rotate(225deg); box-shadow:0 0 40px #d5093c;}
+    50% {transform: scale(1.1) rotate(225deg); box-shadow:0 0 70px #d5093c;}
+    100% {transform: scale(1) rotate(225deg); box-shadow:0 0 40px #d5093c;}
+}
+
+
+#chest {
+    position:relative;
+    width:500px;
+    height:500px;
+    margin:0 auto;
+}
+.heart {
+    position:absolute;
+    z-index:2;
+    background: -moz-linear-gradient(-90deg, #F50A45 0%, #d5093c 40%);
+    background: -webkit-gradient(linear, right 50%, left 50%, color-stop(0%,#F50A45), color-stop(40%,#d5093c));
+    background: -webkit-linear-gradient(-90deg, #F50A45 0%,#d5093c 40%);
+    background: linear-gradient(-90deg, #F50A45 0%,#d5093c 40%);
+    -webkit-animation: beat 0.7s ease 0s infinite normal;
+    -moz-animation: beat 0.7s ease 0s infinite normal;
+    animation: beat 0.7s ease 0s infinite normal;
+}
+.heart.center {
+    background: -moz-linear-gradient(-45deg, #B80734 0%, #d5093c 40%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#B80734), color-stop(40%,#d5093c));
+    background: -webkit-linear-gradient(-45deg, #B80734 0%,#d5093c 40%);
+    background: linear-gradient(-45deg, #B80734 0%,#d5093c 40%);
+}
+.heart.top {
+    z-index:3;
+}
+.side {
+    top:100px;
+    width:220px;
+    height:220px;
+    border-radius: 220px;
+}
+.center {
+    width:210px;
+    height:215px;
+    bottom:104px;
+    left:130px;
+    font-size:0;
+    text-indent:-9999px;
+}
+.left {
+    left:48px;
+}
+.right {
+    right:62px;
+}
+</style>
+</html>
