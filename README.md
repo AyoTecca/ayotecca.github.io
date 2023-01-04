@@ -1,1 +1,0 @@
-# ayotecca.github.io
